@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { DataService } from '../service/data.service';
+import { Post } from '../models/Post';
+
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +10,11 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  postToShow: Post[] = [];
+
+  constructor(private data: DataService) {
+    // Load the data
+    this.postToShow = this.data.getAllPosts();
+  }
 
 }

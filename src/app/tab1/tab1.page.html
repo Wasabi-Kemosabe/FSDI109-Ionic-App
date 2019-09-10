@@ -18,4 +18,11 @@
     An Ionic button
   </ion-button>
 
+  <ion-card *ngFor="let item of postToShow">
+    <img src="{{item.image}}" />
+    <ion-card-content>From: {{item.from}}</ion-card-content>
+    <ion-card-content>{{item.createdOn | date: 'MMM dd yyyy HH:mm'}}</ion-card-content>
+    <ion-card-content>{{item.message}}</ion-card-content>
+  </ion-card>
+
 </ion-content>

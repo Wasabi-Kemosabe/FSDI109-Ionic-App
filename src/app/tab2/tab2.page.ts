@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Post } from '../models/Post';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +9,19 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  model: Post = new Post();
+
+  constructor(private data: DataService) { }
+
+  post() {
+    console.log('Save button pressed');
+    console.log(this.model);
+
+    // Save the post
+    this.data.savePost(this.model);
+
+    // Clear the form
+    this.model = new Post();
+  }
 
 }
