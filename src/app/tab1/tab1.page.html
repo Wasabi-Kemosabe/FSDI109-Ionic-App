@@ -6,13 +6,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen padding scroll-y="false">
 
   <h1>This is Ionic</h1>
 
-  <ion-button>
-    An Ionic button
-  </ion-button>
+  <!-- <ion-slides>
+    <ion-slide>
+      <img src="../../assets/images/ionic_main_image.png" />
+      <h2>Welcome to the <b>ICA</b></h2>
+      <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a demonstration of
+        proper code use.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../assets/images/molecule_symbol.png" />
+      <h2>What is Ionic?</h2>
+      <p><b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web
+        technologies like HTML, CSS, and JavaScript.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../assets/images/angular_symbol.png" />
+      <h2>What is Ionic Pro?</h2>
+      <p><b>Ionic Pro</b> is a powerful set of services and features built on top of Ionic Framework that brings a
+        totally new level of app development agility to mobile dev teams.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../assets/images/web_developer.png" />
+      <h2>Ready to Play?</h2>
+      <ion-button fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-slide>
+  </ion-slides> -->
 
   <ion-card *ngFor="let item of postToShow">
     <img src="{{item.image}}" />
