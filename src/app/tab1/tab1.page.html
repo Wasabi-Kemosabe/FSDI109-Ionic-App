@@ -6,11 +6,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen padding scroll-y="false">
+<ion-content>
 
   <h1>This is Ionic</h1>
 
-  <!-- <ion-slides>
+  <ion-slides>
     <ion-slide>
       <img src="../../assets/images/ionic_main_image.png" />
       <h2>Welcome to the <b>ICA</b></h2>
@@ -38,10 +38,13 @@
       <ion-button fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon>
       </ion-button>
     </ion-slide>
-  </ion-slides> -->
+  </ion-slides>
 
   <ion-card *ngFor="let item of postToShow">
-    <img src="{{item.image}}" />
+    <ion-card-content *ngIf="item.imageUrl">
+      <img src="{{item.imageUrl}}" />
+    </ion-card-content>
+
     <ion-card-content>From: {{item.from}}</ion-card-content>
     <ion-card-content>{{item.createdOn | date: 'MMM dd yyyy HH:mm'}}</ion-card-content>
     <ion-card-content>{{item.message}}</ion-card-content>

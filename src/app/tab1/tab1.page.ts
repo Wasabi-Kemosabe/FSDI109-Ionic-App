@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../service/data.service';
 import { Post } from '../models/Post';
+import { firestore } from 'firebase';
 
 
 @Component({
@@ -14,7 +15,16 @@ export class Tab1Page {
 
   constructor(private data: DataService) {
     // Load the data
-    this.postToShow = this.data.getAllPosts();
+    this.data.getAllPosts().subscribe(res => {
+      // Iterate over the res to fix the createdOn format
+      for (let i = 0; i < res.length; i++) {
+        let post = res[i];
+        let co: any = post.createdOn;
+        post.createdOn = new firestore.Timestamp(co.seconds, co.nanoseconds).toDate();
+      }
+
+      this.postToShow = res;
+    });
   }
 
 }

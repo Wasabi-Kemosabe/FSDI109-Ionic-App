@@ -2,7 +2,7 @@ export class Post {
 
     // Class attributes
     public message: string;
-    public image: string;
+    public imageUrl: string;
     public to: string;
     public from: string;
     public createdOn: Date;
