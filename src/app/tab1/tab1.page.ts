@@ -16,14 +16,17 @@ export class Tab1Page {
   constructor(private data: DataService) {
     // Load the data
     this.data.getAllPosts().subscribe(res => {
+      this.postToShow = [];
+
       // Iterate over the res to fix the createdOn format
       for (let i = 0; i < res.length; i++) {
         let post = res[i];
         let co: any = post.createdOn;
         post.createdOn = new firestore.Timestamp(co.seconds, co.nanoseconds).toDate();
+        if (post.to == 'Everyone' || post.to == 'Angelo' || post.from == 'Angelo') {
+          this.postToShow.push(post);
+        }
       }
-
-      this.postToShow = res;
     });
   }
 

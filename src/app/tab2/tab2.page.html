@@ -22,12 +22,9 @@
     <ion-label position='stacked'>To:</ion-label>
     <ion-select interface="popover" [(ngModel)]="model.to" name='to'>
       <ion-select-option value="Everyone">Everyone</ion-select-option>
-      <ion-select-option value="Mark">Mark</ion-select-option>
-      <ion-select-option value="Jacob">Jacob</ion-select-option>
-      <ion-select-option value="Nicholas">Nicholas</ion-select-option>
-      <ion-select-option value="Jennifer">Jennifer</ion-select-option>
-      <ion-select-option value="Amanda">Amanda</ion-select-option>
-      <ion-select-option value="Michelle">Michelle</ion-select-option>
+      <ion-select-option *ngFor="let friend of friendsToDisplay" [value]='friend.name'>
+        {{friend.name}}
+      </ion-select-option>
     </ion-select>
   </ion-item>
 
