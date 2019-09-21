@@ -21,10 +21,13 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-list>
-    <ion-item *ngFor="let friend of friendsToDisplay">
-      {{friend.name}}
+  <ion-item-sliding *ngFor="let friend of friendsToDisplay">
+    <ion-item>
+      <ion-label>{{friend.name}}</ion-label>
     </ion-item>
-  </ion-list>
+    <ion-item-options side="end">
+      <ion-item-option color='danger' (click)='unfriend(friend)'>Unfriend</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding> 
 
 </ion-content>

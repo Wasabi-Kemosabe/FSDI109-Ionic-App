@@ -1,3 +1,5 @@
+import { SharedService } from '../service/shared.service';
+
 export class Post {
 
     // Class attributes
@@ -9,7 +11,6 @@ export class Post {
 
     // Constructor (what you want to initialize)
     constructor() {
-        this.from = 'Angelo';
         this.to = 'Everyone';
         this.createdOn = new Date();
     }
